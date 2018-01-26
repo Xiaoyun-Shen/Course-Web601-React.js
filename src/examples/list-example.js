@@ -45,7 +45,7 @@ const renderList = () => {
   ReactDOM.render(
     <div>
       This is a simple example to demonstrate a reactive update.
-      <BasicInput/>
+      <ListComponent/>
     </div>,
     document.getElementById('root')
   );

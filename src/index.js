@@ -24,8 +24,9 @@ const MenuReturn = () => (
 );
 
 const renderMainMenu = () => {
-  const renderedLinks = Links.map(link => (
+  const renderedLinks = links.map(link => (
     <MenuEntry
+      key={link.label}
       clickHandler={link.clickHandler}
       label={link.label}/>
   ));
