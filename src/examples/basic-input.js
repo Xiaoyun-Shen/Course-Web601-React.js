@@ -30,13 +30,10 @@ class BasicInput extends React.Component {
             Please enter some input
           </p>
           <input id="input" />
-		  <button onClick={this.handleClick}>Add</button>
-         
-		  
-		  <ul>
-			{list}
-		  </ul>
-		  
+          <button onClick={this.handleClick}>Add</button>
+          <ul>
+	     {list}
+	  </ul>		  
       </div>
     ); 
   }
