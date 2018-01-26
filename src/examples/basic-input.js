@@ -21,7 +21,7 @@ class BasicInput extends React.Component {
   }
 	  
   render() {
-	const list = this.state.lists.map((item, i) => {
+    const list = this.state.lists.map((item, i) => {
 		return <li key={i}>{item}</li>
 	});
     return (
@@ -30,13 +30,10 @@ class BasicInput extends React.Component {
             Please enter some input
           </p>
           <input id="input" />
-		  <button onClick={this.handleClick}>Add</button>
-         
-		  
-		  <ul>
-			{list}
-		  </ul>
-		  
+          <button onClick={this.handleClick}>Add</button>        
+	  <ul>
+		{list}
+	  </ul>		  
       </div>
     ); 
   }
