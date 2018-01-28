@@ -1,14 +1,3 @@
-const links = [{
-    label: "Hello World Example",
-    clickHandler: renderHelloWorld
-  }, {
-    label: "Input Example",
-    clickHandler: renderBasicInput
-  }, {
-    label: "List Example",
-    clickHandler: renderList
-}];
-
 const MenuEntry = ({clickHandler, label}) => (
   <li>
     <a onClick={clickHandler} href="#">

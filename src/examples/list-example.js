@@ -44,9 +44,13 @@ class ListComponent extends React.Component {
 const renderList = () => {
   ReactDOM.render(
     <div>
-      This is a simple example to demonstrate a reactive update.
+      This is a simple example demonstrating lists & props.
       <ListComponent/>
     </div>,
     document.getElementById('root')
   );
 };
+
+addLink("Lists", renderList);
+
+
