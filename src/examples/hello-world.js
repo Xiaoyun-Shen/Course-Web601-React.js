@@ -15,3 +15,6 @@ const renderHelloWorld = () => {
   document.getElementById('root')
   );
 };
+
+addLink("Hello World", renderHelloWorld);
+
