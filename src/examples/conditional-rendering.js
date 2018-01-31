@@ -1,23 +1,23 @@
 const NumberTypeLabel = (props) => {
-  var numberType;
-
-  if(props.number === 0) {
-    numberType = "even";
+  if(props.number % 2 === 0) {
+    return (
+      <div>
+        {props.number} is an even number
+      </div>
+    );
   } else {
-    numberType = "odd";
+    return (
+      <div>
+        {props.number} is an odd number
+      </div>
+    );
   }
-
-  return (
-    <p>
-      {props.number} is an {numberType} number.
-    </p>
-  );
 };
 
 const renderConditionalRendering = () => {
   ReactDOM.render(
     // Try changing this value to an odd number!
-    <NumberTypeLabel number={8}/>,
+    <NumberTypeLabel number={3}/>,
     document.getElementById("root")
   );
 };
