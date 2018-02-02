@@ -48,3 +48,6 @@ const renderBasicInput = () => {
     document.getElementById('root')
   );
 };
+
+addLink("Input", renderBasicInput);
+
