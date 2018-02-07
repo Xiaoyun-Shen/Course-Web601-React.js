@@ -39,7 +39,55 @@ function TimeDisplay(props) {
   }
 }
 
+// 3000
+var watchScope1 = null;
+var watchScope2 = null;
+class Watch extends React.Component {
+  // pass in start time, end time
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      currentMilliseconds: props.currentMilliseconds
+    };
+
+    this.counter();
+  }
+  // use setInterval
+  counter() {
+    setInterval(
+      function() {
+        let newTime =
+          this.state.currentMilliseconds;
+
+        // thought here... talk in a second
+        newTime += 10;
+        this.setState({
+          currentMilliseconds: newTime
+        });
+      }.bind(this),
+      10
+    );
+  }
+  render() {
+    return (
+      <div>
+        <TimeDisplay
+            millisecond={
+              this.state.currentMilliseconds
+            }
+          />
+        Hello world!
+        {this.state.currentMilliseconds}
+      </div>
+    );
+  }
+}
+
 ReactDOM.render(
-  <TimeDisplay millisecond={789234}/>,
+  <div>
+    <TimeDisplay millisecond={789234}/>
+    <Watch currentMilliseconds={55000}/>
+  </div>,
   document.getElementById('root')
 );
