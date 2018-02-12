@@ -1,9 +1,6 @@
 function answer1() {
-  return (
-    <div>
-      Hello world!
-    </div>
-  );
+  /* Replace 'undefined' with some JSX */
+  return undefined;
 }
 
 
@@ -68,4 +65,84 @@ function answer4() {
   }
 
   return <InputComponent/>;
+}
+
+function answer5() {
+  class Dots extends React.Component {
+    constructor(props) {
+      super(props);
+
+      this.state = {
+        count: 0
+      };
+    }
+    componentDidMount() {
+      var counter = function() {
+        console.log(this.state.count);
+        this.setState({
+          count: ((this.state.count + 1) % 3) + 1
+        });
+      }.bind(this);
+
+      setInterval(counter, 1000);
+    }
+    render() {
+      var dots = '...';
+
+      return (
+        <div>
+          {dots}
+        </div>
+      );
+    }
+  }
+
+  return <Dots/>;
+}
+
+function answer6() {
+  function convertMeToArrowSyntax(a, b, c) {
+    return a * (b - c);
+  }
+
+  return convertMeToArrowSyntax(3, 7, 5);
+}
+
+function answer7() {
+  var myObject = {
+    x: 8,
+    y: 3
+  };
+
+  function addXtoY() {
+    return this.x + this.y;
+  }
+
+  try {
+    return addXtoY();
+  } catch(e) {
+    return String(e);
+  }
+}
+
+function answer8() {
+  var myObject = {
+    x: 8,
+    y: 3,
+    addXtoY: function() {
+      return this.x + this.y;
+    }
+  };
+
+  function Component(props) {
+    return (
+      <div>
+        AddXtoY returned {props.callback()}
+      </div>
+    );
+  }
+
+  return (
+    <Component callback={myObject.addXtoY}/>
+  );
 }
