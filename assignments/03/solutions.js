@@ -1,6 +1,6 @@
 function answer1() {
   /* Replace 'undefined' with some JSX */
-  return undefined;
+  return (<div>Hello World!</div>);
 }
 
 
@@ -10,7 +10,7 @@ function answer2() {
       return (
         <div>
           a + b =
-          {this.props.four + this.props.seven}
+          {this.props.a + this.props.b}
         </div>
       );
     }
@@ -28,8 +28,8 @@ function answer3() {
       <div>
         {someProps.one}
         , {someProps.two}
-        ,
-        is a sort of fun game!
+        ,{someProps.third} 
+		is a sort of fun game!
       </div>
     );
   }
@@ -38,6 +38,7 @@ function answer3() {
     <AddAPropToMe
       one={'Tic'}
       two={'tac'}
+	  third={'toe'}
     />
   );
 }
@@ -47,23 +48,27 @@ function answer4() {
   class InputComponent extends React.Component {
     constructor(props) {
       super(props);
-
+	  this.handleChange=this.handleChange.bind(this);
       this.state = {
         userInput: ''
       };
     }
+	handleChange(e){
+		this.setState({userInput:e.target.value});
+	}
+		
     render() {
       return (
         <div>
-          <input/>
+          <input onChange={this.handleChange}/>
           <p>
-            The user typed `{this.state.userInput}`
+            The user typed {this.state.userInput}
           </p>
         </div>
       );
     }
   }
-
+  
   return <InputComponent/>;
 }
 
@@ -78,17 +83,25 @@ function answer5() {
     }
     componentDidMount() {
       var counter = function() {
-        console.log(this.state.count);
-        this.setState({
-          count: ((this.state.count + 1) % 3) + 1
-        });
+        
+		this.setState({
+			count:((this.state.count+1)%3)+1
+		});		
+        
       }.bind(this);
 
       setInterval(counter, 1000);
     }
     render() {
-      var dots = '...';
-
+      var dots;
+	  if(this.state.count%3==0){
+		  dots="...";
+	  }else if(this.state.count%2==0){
+		  dots="..";
+	  }else{
+		  dots=".";
+	  }		  
+	  
       return (
         <div>
           {dots}
@@ -97,29 +110,29 @@ function answer5() {
     }
   }
 
-  return <Dots/>;
+  return <Dots />;
 }
 
 function answer6() {
-  function convertMeToArrowSyntax(a, b, c) {
-    return a * (b - c);
-  }
+  var convertMeToArrowSyntax=(a, b, c) => a * (b - c);  
 
   return convertMeToArrowSyntax(3, 7, 5);
 }
 
 function answer7() {
+ 	
   var myObject = {
     x: 8,
     y: 3
   };
+  
 
   function addXtoY() {
     return this.x + this.y;
   }
-
+  let newFunction=addXtoY.bind(myObject);
   try {
-    return addXtoY();
+    return newFunction();
   } catch(e) {
     return String(e);
   }
@@ -132,7 +145,8 @@ function answer8() {
     addXtoY: function() {
       return this.x + this.y;
     }
-  };
+  }
+   let newFunction=myObject.addXtoY.bind(myObject);
 
   function Component(props) {
     return (
@@ -143,6 +157,6 @@ function answer8() {
   }
 
   return (
-    <Component callback={myObject.addXtoY}/>
+    <Component callback={newFunction}/>
   );
 }
