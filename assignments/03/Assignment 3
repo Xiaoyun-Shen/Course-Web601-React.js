@@ -1,0 +1,20 @@
+Overview: This assignment reviews and reinforces the concepts we’ve learned in react. 
+
+Learning Materials: If you get stuck, refer back to the examples on the course github, and the react documentation. 
+
+Course github examples: https://github.com/JonCSGuy/advanced-javascript/tree/master/src/examples
+
+
+React documentation:
+https://reactjs.org/docs/hello-world.html
+
+Marking: The assignment consists of 8 questions. Each question is worth 1 mark. You must upload your code to your github to submit it. Alternatively you can send a .zip file containing your source code to the instructor at jdonais@stclaircollege.ca
+
+Instructions: 
+
+Copy the assignment #3 code to your local repository. The code located under: https://github.com/JonCSGuy/advanced-javascript/tree/master/assignments/03
+Start the application with the terminal command npm start. If you get stuck starting up the application, refer back to the instructions in assignment #1
+Visit the assignments/03/index.html webpage in your browser. The web page should load the 8 questions you’ll need to complete your assignment. 
+You’ll find the Javascript file solution.js. It contains 8 functions named answer1(), answer2(), answer3(), etc. put your code solutions inside of those functions. 
+Once you’ve put your code inside of an answer function, refresh the webpage. You should see your answer render on the webpage. 
+Once you’ve completed the assignment, submit your code on your github. The webpage contains some git commands for reference. 
