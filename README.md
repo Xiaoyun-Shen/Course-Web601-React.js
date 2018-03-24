@@ -8,8 +8,10 @@ React allows developers to create large web-applications that use data and can c
 In this course, some small applications were developed using React.js. They are locateated in the assignments folder.
 
 * a stop watch web application
-  ![Stop Watch](/images/stopWatch.png)
+
+![Stop Watch](/images/stopWatch.png)
     
 * a webpage that integrates with an external Restful API called PokeAPI.
-  ![API](/images/pokemonAPI.png)
+
+![API](/images/pokemonAPI.png)
 
